@@ -1,0 +1,38 @@
+.calendar-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items:flex-start;
+  height: calc(100% - 4px);
+}
+
+  .calendar-options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+  }
+
+    .calendar-options-month {
+      margin-right: 10px;
+    }
+
+  .calendar-day {
+    box-sizing: border-box;
+    width: calc(100%/7);
+    height: calc(100%/5);
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .calendar-day-inactive {
+    .calendar-day;
+    color: rgba(0,0,0,.3);
+  }
+
+  .calendar-event-card {
+    background-color: rgba(32, 216, 35,.3);
+    border: 1px solid rgb(32,216,35)
+  }
