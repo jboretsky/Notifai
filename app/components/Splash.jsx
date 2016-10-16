@@ -51,7 +51,7 @@ export class FacebookAuth extends React.Component {
   render() {
     return (
       <FacebookLogin
-        appId="616102381854407"
+        appId="878588115605831"
         autoLoad={true}
         textButton=" Connect to Facebook"
         cssClass= {"btn btn-lg btn-primary" + (this.state.clicked ? " loading" : "") }
