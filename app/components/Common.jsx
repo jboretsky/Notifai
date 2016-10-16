@@ -3,7 +3,7 @@ import React from 'react';
 export class CalendarBodyWrapper extends React.Component {
   render() {
     return (
-      <div className="calendar-body">
+      <div>
         {this.props.children}
       </div>
     );
