@@ -17,6 +17,7 @@ export default class Splash extends React.Component {
           <div className="column col-3 col-sm-1"></div>
           <div className="column col-6 col-sm-10">
             <h1><Brand/></h1>
+            <p>Notifai keeps an eye on your Facebook tags so you don't have to.</p>
             <FacebookAuth
               onLoginSuccess = {this.props.onLoginSuccess}
               loggedIn = {this.props.loggedIn}
@@ -55,6 +56,8 @@ export class FacebookAuth extends React.Component {
         <FacebookLogin
           appId="616102381854407"
           autoLoad={true}
+          textButton="Connect to Facebook"
+          cssClass="btn btn-lg btn-primary"
           fields="name,email,picture"
           onClick={this.componentClicked}
           callback={this.callback} 
