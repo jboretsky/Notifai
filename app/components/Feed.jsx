@@ -41,7 +41,6 @@ export default class Feed extends React.Component {
 
   processImgs(rawImgs) {
     let clarifai = this.props.clarifai;
-    console.log(rawImgs);
     let func = (rawImg) => {
       clarifai.models.predict('b931c49945d649eba9e1cd2830cdc9ef',rawImg.source)
       .then((response) => {

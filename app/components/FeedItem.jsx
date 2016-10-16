@@ -17,7 +17,9 @@ export default class FeedItem extends React.Component {
           Open on Facebook
         </a>
         <div className="info">
-          <p className="posted-by">Posted by {this.props.image.user}</p>
+          <p className="posted-by">
+            Posted by <b>{this.props.user.uid === this.props.image.userId ? "You" : this.props.image.user}</b>
+          </p>
           <div className="tags">
             {this.props.image.concepts.slice(0,4).map((concept) => {
               var height = { height: concept.value * 26 }
