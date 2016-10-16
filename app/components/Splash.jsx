@@ -46,11 +46,11 @@ export class FacebookAuth extends React.Component {
     if (!this.props.loggedIn) {
       return (
         <FacebookLogin
-          appId="1777897672498356"
+          appId="616102381854407"
           autoLoad={true}
           fields="name,email,picture"
           onClick={this.componentClicked}
-          callback={this.callback}
+          callback={this.callback} 
         />
       );
     } else {
