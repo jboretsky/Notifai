@@ -13,6 +13,9 @@ export default class FeedItem extends React.Component {
     };
     return (
       <li className="feed-item" style={image}>
+        <a className="btn btn-sm" target="blank" href={this.props.image.link}>
+          Open on Facebook
+        </a>
         <div className="info">
           <p className="posted-by">Posted by {this.props.image.user}</p>
           <div className="tags">
