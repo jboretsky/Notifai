@@ -65,18 +65,22 @@ export default class Feed extends React.Component {
 
   get pagination() {
     if (this.state.nextPage) {
-      return <button className="btn" onClick={this.getImgs}>More <i className="typcn typcn-plus-outline" /></button>
-    }
+      return(<button className="btn btn-more" onClick={this.getImgs}>
+        <i className="typcn typcn-plus" /> More 
+      </button>
+    )}
   }
 
 	render() {
 		return (
+        <div>
 	        <ul className="feed">
 		        {this.state.imgs.map((img) => {
 			        return <FeedItem key={img.id} image={img} user={this.props.user}/>
 		        })}
-            {this.pagination}
 	        </ul>
+          {this.pagination}
+        </div>
 	    )
     }
 }
