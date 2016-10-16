@@ -8,6 +8,7 @@ export default class Splash extends React.Component {
   };
 
   render() {
+  	console.log(this.props.user);
     return (
       <div className="account">
       	<NavBar user={this.props.user} />
