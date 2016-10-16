@@ -41,13 +41,17 @@ export class FacebookAuth extends React.Component {
     super();
     this.componentClicked = this._componentClicked.bind(this);
     this.callback = this._callback.bind(this);
+    this.state = {
+      clicked: false
+    };
   }
 
   _callback(response) {
     this.props.onLoginSuccess(response);
   }
 
-  _componentClicked() {
+  _componentClicked(){
+    this.setState({clicked: true});
   }
 
   render() {
@@ -57,7 +61,7 @@ export class FacebookAuth extends React.Component {
           appId="616102381854407"
           autoLoad={true}
           textButton=" Connect to Facebook"
-          cssClass="btn btn-lg btn-primary"
+          cssClass= {"btn btn-lg btn-primary" + (this.state.clicked ? " loading" : "") }
           icon={<i className='typcn typcn-social-facebook'></i>}
           fields="name,email,picture"
           onClick={this.componentClicked}
