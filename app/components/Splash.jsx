@@ -56,8 +56,9 @@ export class FacebookAuth extends React.Component {
         <FacebookLogin
           appId="616102381854407"
           autoLoad={true}
-          textButton="Connect to Facebook"
+          textButton=" Connect to Facebook"
           cssClass="btn btn-lg btn-primary"
+          icon={<i className='typcn typcn-social-facebook'></i>}
           fields="name,email,picture"
           onClick={this.componentClicked}
           callback={this.callback} 
