@@ -12,7 +12,8 @@ export default class Feed extends React.Component {
     super();
 
     this.state = {
-     imgs: []
+     imgs: [],
+     nextPage: "init",
     };
   }
 
@@ -24,11 +25,16 @@ export default class Feed extends React.Component {
     let uid = this.props.user.uid;
     let access_token = this.props.user.accessToken;
 
+    let url = this.state.nextPage == "init" ? `/${uid}/photos?limit=10` : this.state.nextPage;
+
     FB.api(
-      `/${uid}/photos/`,
+      url,
       (response) => {
         if (response && !response.error) {
           this.processImgs(response.data);
+          this.setState({
+            nextPage: response.paging.next,
+          })
         }
       });
   }
@@ -57,12 +63,19 @@ export default class Feed extends React.Component {
     for (let i = 0; i < rawImgs.length && i < 10; i++) func(rawImgs[i]);
   }
 
+  get pagination() {
+    if (this.state.nextPage) {
+      return <button className="btn" onClick={this.getImgs}>More <i className="typcn typcn-plus-outline" /></button>
+    }
+  }
+
 	render() {
 		return (
 	        <ul className="feed">
 		        {this.state.imgs.map((img) => {
 			        return <FeedItem key={img.id} image={img} user={this.props.user}/>
 		        })}
+            {this.pagination}
 	        </ul>
 	    )
     }
