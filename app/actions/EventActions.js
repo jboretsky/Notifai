@@ -1,10 +1,9 @@
 import uuid from 'node-uuid';
 
 const eventActions = {
-    addEvent: (value, date) => {
+    login: (value, date) => {
     return {
-      type: 'ADD_EVENT',
-      id: uuid.v4(),
+      type: 'FB_LOG_IN',
       value,
       date,
     }
