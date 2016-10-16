@@ -35,6 +35,11 @@ const common = {
                 ]
             },
             {
+               test: /\.(ico)$/,
+               exclude: /node_modules/,
+               loader:'file-loader?name=[name].[ext]&context=./'
+            },
+            {
                 test: /\.jsx?$/,
                 loaders: ['babel?cacheDirectory'],
                 include: __dirname,

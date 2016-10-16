@@ -5,6 +5,9 @@ import EventActions from '../actions/EventActions';
 
 import Notifai from '../components/Notifai';
 
+require('../assets/favicon.ico');
+require('file?name=graph.png!../assets/Notifai-Graph.png');
+
 class AppContainer extends React.Component {
   render() {
     const {events, onEventAdd} = this.props;
