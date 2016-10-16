@@ -75,7 +75,13 @@ export default class Feed extends React.Component {
 		return (
         <div>
 	        <ul className="feed">
-		        {this.state.imgs.map((img) => {
+		        {this.state.imgs.filter((img) => {
+              let sum = 0
+              img.concepts.slice(0,4).map((a) => {
+                sum += a.value
+              })
+              return sum > 0.75
+            }).map((img) => {
 			        return <FeedItem key={img.id} image={img} user={this.props.user}/>
 		        })}
 	        </ul>
