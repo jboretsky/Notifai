@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ClickableImage from './FeedItem.jsx';
+import FeedItem from './FeedItem.jsx';
 
 export default class Feed extends React.Component {
   static propTypes = {
@@ -56,11 +56,11 @@ export default class Feed extends React.Component {
 
 	render() {
 		return (
-	        <div>
+	        <ul className="feed">
 		        {this.state.imgs.map((img) => {
-			        return <ClickableImage key={img.id} image={img} />
+			        return <FeedItem key={img.id} image={img} />
 		        })}
-	        </div>
+	        </ul>
 	    )
     }
 }
