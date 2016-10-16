@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBar from './parts/Navbar.jsx'
+import NavBar from './parts/NavBar.jsx'
 
 export default class Splash extends React.Component {
   static propTypes = {

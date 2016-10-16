@@ -13,10 +13,12 @@ export default class NavBar extends React.Component {
     return (
       <div className="navbar">
         <Brand />
-      	<figure className="avatar">
-            <img src={this.props.user.profileImg} />
-            <img src={fb_logo} className="avatar-icon" />
-        </figure>
+        <div className="controls">
+          <figure className="avatar">
+              <img src={this.props.user.profileImg} />
+              <img src={fb_logo} className="avatar-icon" />
+          </figure>
+        </div>
       </div>
     );
   }
