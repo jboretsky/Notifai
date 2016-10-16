@@ -19,19 +19,24 @@ export default class Notifai extends React.Component {
   }
 
   _onLoginSuccess(response) {
+    console.log(response);
     this.setState({
       user: {
         accessToken: response.accessToken,
         email : response.email,
         name: response.name,
-        profileImg: response.picture.data.url
+        profileImg: response.picture.data.url,
+        uid: response.id,
       }
     })
   }
   render() {
     // example of image prediction on profile picture
     if (this.state.user) {
-      return (<Account user={this.state.user} />); 
+      return (<Account 
+        user={this.state.user} 
+        clarify={this.app}
+      />); 
     } else {
       return (<Splash onLoginSuccess={this.onLoginSuccess}/>);
     }
