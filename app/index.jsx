@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './containers/App';
-import LoginPage from './components/Login/LoginPage';
 
 import EventActions from './actions/EventActions';
 
@@ -47,7 +46,6 @@ ReactDOM.render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App} />
-      <Route path="/login" component={LoginPage} />
     </Router>
 </Provider>
 ), document.getElementById('app'));

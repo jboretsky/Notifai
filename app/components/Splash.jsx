@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Brand from './Brand.jsx';
 import FacebookLogin from 'react-facebook-login';
 
 
@@ -11,13 +12,19 @@ export default class Splash extends React.Component {
 
   render() {
     return (
-      <div className="header">
-        <FacebookAuth
-          onLoginSuccess = {this.props.onLoginSuccess}
-          loggedIn = {this.props.loggedIn}
-          imageUrl = {this.props.imageUrl}
-          userName = {this.props.userName}
-        />
+      <div className="container"> 
+        <div className="splash columns">
+          <div className="column col-3 col-sm-1"></div>
+          <div className="column col-6 col-sm-10">
+            <h1><Brand/></h1>
+            <FacebookAuth
+              onLoginSuccess = {this.props.onLoginSuccess}
+              loggedIn = {this.props.loggedIn}
+              imageUrl = {this.props.imageUrl}
+              userName = {this.props.userName}
+            />
+          </div>
+        </div>
       </div>
     );
   }
