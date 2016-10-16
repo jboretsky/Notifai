@@ -1,22 +1,21 @@
 import React from 'react';
 
 import NavBar from './parts/NavBar.jsx'
-import Content from './Content'
+import Feed from './Feed.jsx'
 
-export default class Splash extends React.Component {
+export default class Account extends React.Component {
   static propTypes = {
-  	user: React.PropTypes.object
+    user: React.PropTypes.object,
+    clarifai: React.PropTypes.object
   };
 
   render() {
     return (
       <div className="account">
-      	<NavBar user={this.props.user} />
-        <Content 
-          clarify={this.props.clarify}
-          accessToken={this.props.user.accessToken}
-          uid={this.props.user.uid}
-         />
+        <NavBar user={this.props.user} />
+        <div className="container">
+          <Feed user={this.props.user} clarifai={this.props.clarifai} />
+        </div>
       </div>
     );
   }

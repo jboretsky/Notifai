@@ -9,7 +9,7 @@ export default class Notifai extends React.Component {
   constructor() {
     super();
     this.onLoginSuccess = this._onLoginSuccess.bind(this);
-    this.app = new Clarifai.App(
+    this.clarifai = new Clarifai.App(
       '7bpbR9ZvvkBkGXQVB1XzaObA3fmqTIKOJnocm3o1',
       'Y9Ouy0La2AjBJ1GleJkyE0EwmNohks6X-GCib680'
     );
@@ -19,7 +19,6 @@ export default class Notifai extends React.Component {
   }
 
   _onLoginSuccess(response) {
-    console.log(response);
     this.setState({
       user: {
         accessToken: response.accessToken,
@@ -31,9 +30,8 @@ export default class Notifai extends React.Component {
     })
   }
   render() {
-    // example of image prediction on profile picture
     if (this.state.user) {
-      return (<Account user={this.state.user} clarify={this.app}/>); 
+      return (<Account user={this.state.user} clarifai={this.clarifai}/>); 
     } else {
       return (<Splash onLoginSuccess={this.onLoginSuccess}/>);
     }
