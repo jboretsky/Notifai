@@ -18,7 +18,6 @@ export default class Notifai extends React.Component {
   }
 
   _onLoginSuccess(response) {
-    console.log(response);
     this.setState({
       loggedIn: true,
       accessToken: response.accessToken,

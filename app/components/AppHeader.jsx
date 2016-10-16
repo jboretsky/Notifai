@@ -36,7 +36,6 @@ export class SearchBar extends React.Component {
   }
 
   _callback(response) {
-    console.log(response);
     this.props.onLoginSuccess(response);
   }
 
@@ -57,11 +56,10 @@ export class SearchBar extends React.Component {
     } else {
       return (
         <div>
-        <span>Hello, {this.props.userName}</span>
-        <img src={this.props.imageUrl}/>
+          <span>Hello, {this.props.userName}</span>
+          <img src={this.props.imageUrl}/>
         </div>
       );
-      {/* Logged in */}
     }
   }
 }
