@@ -3,7 +3,7 @@ import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 
 
-export default class AppHeader extends React.Component {
+export default class Splash extends React.Component {
   static propTypes = {
     onLoginSuccess: React.PropTypes.func,
     loggedIn: React.PropTypes.bool,
@@ -12,7 +12,7 @@ export default class AppHeader extends React.Component {
   render() {
     return (
       <div className="header">
-        <SearchBar
+        <FacebookAuth
           onLoginSuccess = {this.props.onLoginSuccess}
           loggedIn = {this.props.loggedIn}
           imageUrl = {this.props.imageUrl}
@@ -23,7 +23,7 @@ export default class AppHeader extends React.Component {
   }
 }
 
-export class SearchBar extends React.Component {
+export class FacebookAuth extends React.Component {
   static propTypes = {
     onLoginSuccess: React.PropTypes.func,
     loggedIn: React.PropTypes.bool,

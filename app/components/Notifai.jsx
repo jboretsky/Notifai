@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import AppHeader from '../AppHeader.jsx';
+import Splash from './Splash.jsx';
 
 export default class Notifai extends React.Component {
 
@@ -29,14 +29,12 @@ export default class Notifai extends React.Component {
 
   render() {
     return (
-      <div className='app'>
-        <AppHeader 
+        <Splash
           onLoginSuccess = {this.onLoginSuccess}
           loggedIn = {this.state.loggedIn}
           imageUrl = {this.state.imageUrl}
           userName = {this.state.name}
         />
-      </div>
     );
   }
 }

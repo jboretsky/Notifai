@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import EventActions from '../actions/EventActions';
 
-import Notifai from '../components/Notifai/Notifai';
+import Notifai from '../components/Notifai';
 
 class AppContainer extends React.Component {
   render() {
