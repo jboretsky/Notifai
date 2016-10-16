@@ -33,10 +33,7 @@ export default class Notifai extends React.Component {
   render() {
     // example of image prediction on profile picture
     if (this.state.user) {
-      return (<Account 
-        user={this.state.user} 
-        clarify={this.app}
-      />); 
+      return (<Account user={this.state.user} clarify={this.app}/>); 
     } else {
       return (<Splash onLoginSuccess={this.onLoginSuccess}/>);
     }

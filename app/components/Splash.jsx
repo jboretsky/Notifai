@@ -6,7 +6,7 @@ import Clarifai from 'clarifai';
 
 export default class Splash extends React.Component {
   static propTypes = {
-    onLoginSuccess: React.PropTypes.object,
+    onLoginSuccess: React.PropTypes.func,
   };
 
   render() {
@@ -49,26 +49,18 @@ export class FacebookAuth extends React.Component {
   }
 
   render() {
-    if (!this.props.loggedIn) {
-      return (
-        <FacebookLogin
-          appId="878588115605831"
-          autoLoad={true}
-          textButton=" Connect to Facebook"
-          cssClass= {"btn btn-lg btn-primary" + (this.state.clicked ? " loading" : "") }
-          icon="fa-facebook"
-          fields="name,email,picture"
-          onClick={this.componentClicked}
-          callback={this.callback}
-          scope="user_photos"
-        />
-      );
-    } else {
-      return (
-        <div>
-          hi
-        </div>
-      );
-    }
+    return (
+      <FacebookLogin
+        appId="878588115605831"
+        autoLoad={true}
+        textButton=" Connect to Facebook"
+        cssClass= {"btn btn-lg btn-primary" + (this.state.clicked ? " loading" : "") }
+        icon="fa-facebook"
+        fields="name,email,picture"
+        onClick={this.componentClicked}
+        callback={this.callback}
+        scope="user_photos"
+      />
+    );
   }
 }
