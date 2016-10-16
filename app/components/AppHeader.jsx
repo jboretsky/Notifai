@@ -12,7 +12,7 @@ export default class AppHeader extends React.Component {
   render() {
     return (
       <div className="header">
-        <SearchBar 
+        <SearchBar
           onLoginSuccess = {this.props.onLoginSuccess}
           loggedIn = {this.props.loggedIn}
           imageUrl = {this.props.imageUrl}
@@ -50,7 +50,7 @@ export class SearchBar extends React.Component {
           autoLoad={true}
           fields="name,email,picture"
           onClick={this.componentClicked}
-          callback={this.callback} 
+          callback={this.callback}
         />
       );
     } else {
