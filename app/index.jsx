@@ -42,6 +42,7 @@ unsubscribe();
 */
 
 // we create the store here and pass it down to our top most component..
+
 ReactDOM.render((
   <Provider store={store}>
     <Router history={browserHistory}>

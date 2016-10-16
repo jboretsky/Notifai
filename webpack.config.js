@@ -26,12 +26,12 @@ const common = {
             {
                 test: /\.less$/,
                 loaders: ['style','css','less'],
-                include: PATHS.app
             },
             {
                 test: /\.jsx?$/,
                 loaders: ['babel?cacheDirectory'],
-                include: PATHS.app
+                include: __dirname,
+                exclude: /node_modules/
             }
         ]
     }

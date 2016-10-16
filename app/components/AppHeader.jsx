@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
+
 
 export default class AppHeader extends React.Component {
   render() {
@@ -11,10 +13,23 @@ export default class AppHeader extends React.Component {
 }
 
 export class SearchBar extends React.Component {
+  constructor() {
+    super();
+    this.auth = this._auth.bind(this);
+  }
+
+  _auth() {
+  }
+
   render() {
     return (
       <div>
-        <input />
+        <div
+          class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-show-faces="true">
+        </div>
       </div>
     );
   }
