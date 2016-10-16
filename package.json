@@ -11,8 +11,6 @@
     "type": "git",
     "url": "git@github.com:jboretsky/Notifai.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.8.0",
