@@ -4,8 +4,6 @@ import moment from 'moment';
 import Splash from './Splash.jsx';
 import Account from './Account.jsx';
 
-import Clarifai from 'clarifai';
-
 export default class Notifai extends React.Component {
 
   constructor() {
