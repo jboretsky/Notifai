@@ -14,7 +14,12 @@ export default class Account extends React.Component {
       <div className="account">
         <NavBar user={this.props.user} />
         <div className="container">
-          <Feed user={this.props.user} clarifai={this.props.clarifai} />
+          <div className="columns">
+            <div className="column col-2 col-sm-0"></div>
+            <div className="column col-8 col-sm-12">
+              <Feed user={this.props.user} clarifai={this.props.clarifai} />
+            </div>
+          </div>
         </div>
       </div>
     );

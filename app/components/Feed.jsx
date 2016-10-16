@@ -40,6 +40,9 @@ export default class Feed extends React.Component {
       clarifai.models.predict('b931c49945d649eba9e1cd2830cdc9ef',rawImg.source)
       .then((response) => {
         let img = {
+          user: rawImg.from.name,
+          userId: rawImg.from.id,
+          height: rawImg.height,
           url: rawImg.source,
           concepts: response.data.outputs[0].data.concepts,
           id: rawImg.id
@@ -58,7 +61,7 @@ export default class Feed extends React.Component {
 		return (
 	        <ul className="feed">
 		        {this.state.imgs.map((img) => {
-			        return <FeedItem key={img.id} image={img} />
+			        return <FeedItem key={img.id} image={img} user={this.props.user}/>
 		        })}
 	        </ul>
 	    )

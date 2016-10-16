@@ -1,0 +1,49 @@
+ul.feed {
+  list-style: none;
+}
+
+li.feed-item {
+  .rounded;
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: @core-color;
+
+  .info {
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    padding: 0.5em;
+    bottom: 0;
+
+    .posted-by {
+      float: left;
+    }
+
+    .tags {
+      float: right;
+      .value {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 14px;
+        height: 14px;
+        .fill {
+          position: absolute;
+          bottom: 0;
+          background: #444;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      & > *  {
+        margin-left: 4px;
+      }
+    }
+  }
+}
