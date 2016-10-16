@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Brand from './Brand.jsx';
+import Brand from './parts/Brand.jsx';
 import FacebookLogin from 'react-facebook-login';
 
 
@@ -12,8 +12,8 @@ export default class Splash extends React.Component {
 
   render() {
     return (
-      <div className="container"> 
-        <div className="splash columns">
+      <div className="splash container"> 
+        <div className="columns">
           <div className="column col-3 col-sm-1"></div>
           <div className="column col-6 col-sm-10">
             <h1><Brand/></h1>
@@ -62,10 +62,10 @@ export class FacebookAuth extends React.Component {
           autoLoad={true}
           textButton=" Connect to Facebook"
           cssClass= {"btn btn-lg btn-primary" + (this.state.clicked ? " loading" : "") }
-          icon={<i className='typcn typcn-social-facebook'></i>}
+          icon="fa-facebook"
           fields="name,email,picture"
           onClick={this.componentClicked}
-          callback={this.callback} 
+          callback={this.callback}
         />
       );
     } else {

@@ -1,0 +1,29 @@
+.navbar {
+    @navbar-size: 32px;    
+    @navbar-border: 2px;
+
+    @navbar-vpadding: 7px;
+    @navbar-hpadding: @navbar-vpadding*3;
+
+    padding: @navbar-vpadding @navbar-hpadding;
+
+    height: @navbar-size + @navbar-vpadding*2 + @navbar-border;
+
+    background: darken(@core-secondary-color, 5%);
+    border-bottom: @navbar-border solid darken(@core-secondary-color, 10%);
+
+    .brand {
+        float: left;
+        img, svg {
+            height: @navbar-size;
+        }
+    }
+
+    .avatar {
+        // Should be 32px high
+        float: right;
+        .avatar-icon {
+            background: darken(@core-secondary-color, 5%);;
+        }
+    }
+}
