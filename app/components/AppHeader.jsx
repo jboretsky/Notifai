@@ -1,5 +1,4 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
 
 import FacebookLogin from 'react-facebook-login';
 
@@ -16,6 +15,8 @@ export default class AppHeader extends React.Component {
         <SearchBar 
           onLoginSuccess = {this.props.onLoginSuccess}
           loggedIn = {this.props.loggedIn}
+          imageUrl = {this.props.imageUrl}
+          userName = {this.props.userName}
         />
       </div>
     );
@@ -34,15 +35,15 @@ export class SearchBar extends React.Component {
     this.callback = this._callback.bind(this);
   }
 
-  _callback() {
-    this.props.onLoginSuccess();
+  _callback(response) {
+    console.log(response);
+    this.props.onLoginSuccess(response);
   }
 
   _componentClicked() {
   }
 
   render() {
-    console.log(this.props);
     if (!this.props.loggedIn) {
       return (
         <FacebookLogin
@@ -55,7 +56,10 @@ export class SearchBar extends React.Component {
       );
     } else {
       return (
-        <div>Hello</div>
+        <div>
+        <span>Hello, {this.props.userName}</span>
+        <img src={this.props.imageUrl}/>
+        </div>
       );
       {/* Logged in */}
     }

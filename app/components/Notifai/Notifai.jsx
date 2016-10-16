@@ -10,13 +10,21 @@ export default class Notifai extends React.Component {
     this.onLoginSuccess = this._onLoginSuccess.bind(this);
     this.state = {
       loggedIn: false,
+      accessToken: "",
+      email: "",
+      name: "",
+      imageUrl: "",
     }
   }
 
-  _onLoginSuccess() {
-    console.log("Hello");
+  _onLoginSuccess(response) {
+    console.log(response);
     this.setState({
       loggedIn: true,
+      accessToken: response.accessToken,
+      email : response.email,
+      name: response.name,
+      imageUrl: response.picture.data.url,
     })
   }
 
@@ -26,6 +34,8 @@ export default class Notifai extends React.Component {
         <AppHeader 
           onLoginSuccess = {this.onLoginSuccess}
           loggedIn = {this.state.loggedIn}
+          imageUrl = {this.state.imageUrl}
+          userName = {this.state.name}
         />
       </div>
     );
