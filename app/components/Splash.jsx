@@ -6,8 +6,7 @@ import FacebookLogin from 'react-facebook-login';
 
 export default class Splash extends React.Component {
   static propTypes = {
-    onLoginSuccess: React.PropTypes.func,
-    loggedIn: React.PropTypes.bool,
+    onLoginSuccess: React.PropTypes.func
   };
 
   render() {
@@ -18,12 +17,7 @@ export default class Splash extends React.Component {
           <div className="column col-6 col-sm-10">
             <h1><Brand/></h1>
             <p>Notifai keeps an eye on your Facebook tags so you don't have to.</p>
-            <FacebookAuth
-              onLoginSuccess = {this.props.onLoginSuccess}
-              loggedIn = {this.props.loggedIn}
-              imageUrl = {this.props.imageUrl}
-              userName = {this.props.userName}
-            />
+            <FacebookAuth onLoginSuccess={this.props.onLoginSuccess} />
           </div>
         </div>
       </div>
@@ -55,26 +49,17 @@ export class FacebookAuth extends React.Component {
   }
 
   render() {
-    if (!this.props.loggedIn) {
-      return (
-        <FacebookLogin
-          appId="616102381854407"
-          autoLoad={true}
-          textButton=" Connect to Facebook"
-          cssClass= {"btn btn-lg btn-primary" + (this.state.clicked ? " loading" : "") }
-          icon="fa-facebook"
-          fields="name,email,picture"
-          onClick={this.componentClicked}
-          callback={this.callback}
-        />
-      );
-    } else {
-      return (
-        <div>
-          <span>Hello, {this.props.userName}</span>
-          <img src={this.props.imageUrl}/>
-        </div>
-      );
-    }
+    return (
+      <FacebookLogin
+        appId="878588115605831"
+        autoLoad={true}
+        textButton=" Connect to Facebook"
+        cssClass= {"btn btn-lg btn-primary" + (this.state.clicked ? " loading" : "") }
+        icon="fa-facebook"
+        fields="name,email,picture"
+        onClick={this.componentClicked}
+        callback={this.callback}
+      />
+    );
   }
 }

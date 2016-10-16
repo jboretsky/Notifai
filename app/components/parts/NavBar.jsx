@@ -6,6 +6,7 @@ const fb_logo = require('../../assets/fb.svg');
 
 export default class NavBar extends React.Component {
   static propTypes = {
+    user: React.PropTypes.object
   };
 
   render() {
@@ -13,7 +14,7 @@ export default class NavBar extends React.Component {
       <div className="navbar">
         <Brand />
       	<figure className="avatar">
-            <img src="https://picturepan2.github.io/spectre/demo/img/avatar-2.png" />
+            <img src={this.props.user.profileImg} />
             <img src={fb_logo} className="avatar-icon" />
         </figure>
       </div>
